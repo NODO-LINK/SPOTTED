@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>SPOTTED · Crea tu tributo</title>
+<meta name="theme-color" content="#0b0714">
+<meta name="description" content="SPOTTED — battle royale de Spot Club. Crea tu tributo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0714'/%3E%3Cpath d='M10 55 Q50 20 90 55 Q50 90 10 55Z' fill='none' stroke='%23ff2d55' stroke-width='6'/%3E%3Ccircle cx='50' cy='55' r='12' fill='%23ff2d55'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ui.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div class="top">
+  <div class="slots" id="slots"></div>
+  <div class="namebox">
+    <input id="nombre" maxlength="16" placeholder="NOMBRE" autocomplete="off">
+    <button class="ico" id="rnd" title="Aleatorio">🎲</button>
+    <button class="save" id="save">GUARDAR</button>
+    <button class="save jugar" id="jugar">▶ JUGAR</button>
+  </div>
+</div>
+
+<div class="preview">
+  <button data-a="idle" class="act">Quieto</button>
+  <button data-a="walk">Caminar</button>
+  <button data-a="run">Correr</button>
+  <button data-a="pose">Pose</button>
+  <button id="expr">😐</button>
+</div>
+
+<div class="panel">
+  <div class="phead">
+    <div class="tabs" id="tabs"></div>
+  </div>
+  <div class="pbody" id="pbody"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="load" id="load"><div class="sp"></div><span id="loadtxt">CARGANDO…</span></div>
+
+<script type="module" src="js/creador.js"></script>
+<script>setTimeout(() => { const t = document.getElementById('loadtxt'); if (t && document.getElementById('load')) t.textContent = 'REVISA TU CONEXIÓN A INTERNET'; }, 10000);</script>
+</body>
+</html>
